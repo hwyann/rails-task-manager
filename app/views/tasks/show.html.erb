@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+  <h1><%= @task.title %> </h1>
+  <%= link_to 'Edit this task', edit_task_path, class: 'fas fa-pencil-alt btn btn-light' %>
+  </div>
+  <p class="alert alert-secondary"> <%= @task.details %> </p>
+  <div class="form-check">
+        <% if @task.completed %>
+          <input class="form-check-input" type="checkbox" checked>
+          <label class="form-check-label">"This task is completed"</label>
+        <% else %>
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">"This task is not completed yet"</label>
+        <% end %>
+  </div>
+  <%= link_to 'Back to all tasks', tasks_path, class: 'btn btn-light' %>
+</div>
